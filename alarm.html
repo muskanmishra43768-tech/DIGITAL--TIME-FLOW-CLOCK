@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeFlow - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">⏱ TimeFlow</div>
+
+        <nav>
+            <a href="index.html" class="active">🏠 Dashboard</a>
+            <a href="world-clock.html">🌍 World Clock</a>
+            <a href="stopwatch.html">⏱ Stopwatch</a>
+            <a href="countdown.html">⌛ Countdown</a>
+            <a href="alarm.html">🔔 Alarm</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Made with ❤️</p>
+            <small>TimeFlow v1.0</small>
+        </div>
+
+    </aside>
+
+    <!-- Main Dashboard -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h2>My Dashboard</h2>
+                <p>Your time, your world.</p>
+            </div>
+
+            <button id="themeToggle">🌙 Dark Mode</button>
+
+        </header>
+
+        <section class="welcome">
+            <h1 id="greeting">Welcome! 👋</h1>
+            <p>Make every second count.</p>
+        </section>
+
+        <!-- Digital Clock -->
+        <section class="clock-container">
+
+            <h2>Current Local Time</h2>
+
+            <div id="time">00:00:00</div>
+
+            <div id="ampm">AM</div>
+
+            <div id="day">Monday</div>
+
+            <div id="date">Loading Date...</div>
+
+        </section>
+
+        <footer>
+            © 2026 TimeFlow | All Rights Reserved ❤️
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

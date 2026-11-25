@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TimeFlow - Countdown Timer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">⏱ TimeFlow</div>
+
+        <nav>
+            <a href="index.html">🏠 Dashboard</a>
+            <a href="world-clock.html">🌍 World Clock</a>
+            <a href="stopwatch.html">⏱ Stopwatch</a>
+            <a href="countdown.html" class="active">⌛ Countdown</a>
+            <a href="alarm.html">🔔 Alarm</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Made with ❤️</p>
+            <small>TimeFlow v1.0</small>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Countdown Timer ⌛</h2>
+                <p>Every second brings you closer.</p>
+            </div>
+        </header>
+
+        <section class="welcome">
+            <h1>Set Your Countdown</h1>
+            <p>Choose your time and start counting.</p>
+        </section>
+
+        <!-- Countdown Box -->
+        <section class="countdown-container">
+
+            <div class="timer-inputs">
+
+                <div>
+                    <input type="number" id="hours" min="0" max="999" value="0">
+                    <label>Hours</label>
+                </div>
+
+                <div>
+                    <input type="number" id="minutes" min="0" max="59" value="0">
+                    <label>Minutes</label>
+                </div>
+
+                <div>
+                    <input type="number" id="seconds" min="0" max="59" value="0">
+                    <label>Seconds</label>
+                </div>
+
+            </div>
+
+            <div id="countdownDisplay">
+                00:00:00
+            </div>
+
+            <div class="countdown-buttons">
+
+                <button id="startTimer">▶ Start</button>
+
+                <button id="pauseTimer">⏸ Pause</button>
+
+                <button id="resetTimer">🔄 Reset</button>
+
+            </div>
+
+            <p id="timerMessage">Ready to start!</p>
+
+        </section>
+
+        <footer>
+            © 2026 TimeFlow | All Rights Reserved ❤️
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="countdown.js"></script>
+
+</body>
+</html>

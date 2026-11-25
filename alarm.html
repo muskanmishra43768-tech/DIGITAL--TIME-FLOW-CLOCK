@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TimeFlow - Dashboard</title>
+
+    <title>TimeFlow - Alarm</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="dashboard">
@@ -16,11 +19,11 @@
         <div class="logo">⏱ TimeFlow</div>
 
         <nav>
-            <a href="index.html" class="active">🏠 Dashboard</a>
+            <a href="index.html">🏠 Dashboard</a>
             <a href="world-clock.html">🌍 World Clock</a>
             <a href="stopwatch.html">⏱ Stopwatch</a>
             <a href="countdown.html">⌛ Countdown</a>
-            <a href="alarm.html">🔔 Alarm</a>
+            <a href="alarm.html" class="active">🔔 Alarm</a>
         </nav>
 
         <div class="sidebar-bottom">
@@ -30,37 +33,70 @@
 
     </aside>
 
-    <!-- Main Dashboard -->
+    <!-- Main Content -->
     <main class="main-content">
 
         <header class="topbar">
-
             <div>
-                <h2>My Dashboard</h2>
-                <p>Your time, your world.</p>
+                <h2>Alarm Clock 🔔</h2>
+                <p>Never miss an important moment.</p>
             </div>
-
-            <button id="themeToggle">🌙 Dark Mode</button>
-
         </header>
 
         <section class="welcome">
-            <h1 id="greeting">Welcome! 👋</h1>
-            <p>Make every second count.</p>
+            <h1>Set Your Alarm</h1>
+            <p>Choose your preferred time and stay on schedule.</p>
         </section>
 
-        <!-- Digital Clock -->
-        <section class="clock-container">
+        <!-- Alarm Box -->
+        <section class="countdown-container">
 
-            <h2>Current Local Time</h2>
+            <div class="timer-inputs">
 
-            <div id="time">00:00:00</div>
+                <div>
+                    <input type="number" id="alarmHours" min="1" max="12" value="7">
+                    <label>Hours</label>
+                </div>
 
-            <div id="ampm">AM</div>
+                <div>
+                    <input type="number" id="alarmMinutes" min="0" max="59" value="0">
+                    <label>Minutes</label>
+                </div>
 
-            <div id="day">Monday</div>
+                <div>
+                    <select id="alarmPeriod">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                    <label>Period</label>
+                </div>
 
-            <div id="date">Loading Date...</div>
+            </div>
+
+            <div id="alarmDisplay">
+                07:00 AM
+            </div>
+
+            <div class="countdown-buttons">
+
+                <button id="setAlarm">🔔 Set Alarm</button>
+
+                <button id="stopAlarm">⏹ Stop Alarm</button>
+
+            </div>
+
+            <p id="alarmMessage">No alarm ringing.</p>
+
+        </section>
+
+        <!-- Active Alarms -->
+        <section class="countdown-container">
+
+            <h2>Active Alarms ⏰</h2>
+
+            <div id="alarmList">
+                <p>No alarms added yet.</p>
+            </div>
 
         </section>
 
@@ -72,7 +108,7 @@
 
 </div>
 
-<script src="script.js"></script>
+<script src="alarm.js"></script>
 
 </body>
 </html>

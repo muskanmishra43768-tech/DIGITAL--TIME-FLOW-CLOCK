@@ -1,0 +1,604 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+}
+
+/* Dashboard Layout */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    background: #11182b;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #26314a;
+    position: fixed;
+    height: 100vh;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #00e5ff;
+    margin-bottom: 50px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: #aab5ca;
+    padding: 15px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #203450;
+    color: #00e5ff;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    color: #8995aa;
+    text-align: center;
+    line-height: 2;
+}
+
+/* Main Content */
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 35px;
+}
+
+/* Header */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar h2 {
+    font-size: 25px;
+}
+
+.topbar p {
+    color: #9caac0;
+    margin-top: 5px;
+}
+
+#themeToggle {
+    background: #263650;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Welcome Section */
+
+.welcome {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #9caac0;
+}
+
+/* Clock */
+
+.clock-container {
+    background: linear-gradient(135deg, #182a49, #17213b);
+    padding: 45px 20px;
+    border-radius: 22px;
+    text-align: center;
+    border: 1px solid #344967;
+    box-shadow: 0 10px 35px rgba(0, 200, 255, 0.08);
+}
+
+.clock-container h2 {
+    color: #aabbd5;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+#time {
+    font-size: 75px;
+    font-weight: bold;
+    color: #00e5ff;
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+#ampm {
+    color: #ff80ab;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+#date {
+    color: #c6d1e4;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+/* Feature Cards */
+
+.feature-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.feature-card {
+    background: #151f35;
+    padding: 28px;
+    border: 1px solid #293b59;
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #00e5ff;
+    box-shadow: 0 10px 25px rgba(0, 229, 255, 0.1);
+}
+
+.feature-card span {
+    font-size: 35px;
+}
+
+.feature-card h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #9caac0;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.feature-card button {
+    background: #087f9b;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.feature-card button:hover {
+    background: #00a9c9;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    color: #77859c;
+    margin-top: 45px;
+    padding: 20px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 8px;
+    }
+
+    .sidebar nav a {
+        white-space: nowrap;
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .feature-section {
+        grid-template-columns: 1fr;
+    }
+
+    #time {
+        font-size: 45px;
+    }
+
+    .welcome h1 {
+        font-size: 24px;
+    }
+
+    .topbar {
+        gap: 12px;
+    }
+}
+/* =========================
+   WORLD CLOCK PAGE DESIGN
+========================= */
+
+.world-clock-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.world-card {
+    background: linear-gradient(135deg, #182a49, #17213b);
+    border: 1px solid #344967;
+    border-radius: 20px;
+    padding: 30px;
+    transition: 0.3s;
+}
+
+.world-card:hover {
+    transform: translateY(-5px);
+    border-color: #00e5ff;
+    box-shadow: 0 10px 25px rgba(0,229,255,0.12);
+}
+
+.world-card h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.world-time {
+    font-size: 32px;
+    font-weight: bold;
+    color: #00e5ff;
+    text-shadow: 0 0 12px rgba(0,229,255,0.5);
+}
+
+.world-date {
+    color: #aabbd5;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+/* Mobile Responsive */
+
+@media(max-width: 768px) {
+
+    .world-clock-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .world-time {
+        font-size: 27px;
+    }
+
+}
+/* STOPWATCH DESIGN */
+
+.stopwatch-container {
+    background: linear-gradient(135deg, #182a49, #17213b);
+    border: 1px solid #344967;
+    border-radius: 22px;
+    padding: 45px 25px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#stopwatchDisplay {
+    font-size: 65px;
+    font-weight: bold;
+    color: #00e5ff;
+    text-shadow: 0 0 15px rgba(0,229,255,0.5);
+    margin-bottom: 35px;
+}
+
+.stopwatch-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.stopwatch-buttons button {
+    padding: 13px 22px;
+    border: none;
+    border-radius: 10px;
+    background: #087f9b;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.stopwatch-buttons button:hover {
+    background: #00a9c9;
+    transform: translateY(-3px);
+}
+
+.lap-section {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.lap-section h3 {
+    color: #00e5ff;
+    margin-bottom: 15px;
+}
+
+#lapList {
+    list-style: none;
+}
+
+#lapList li {
+    background: #203450;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media(max-width: 600px) {
+    #stopwatchDisplay {
+        font-size: 38px;
+    }
+
+    .stopwatch-buttons button {
+        padding: 11px 14px;
+    }
+}
+.world-clock-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+    width: 100%;
+}
+
+.world-card {
+    background: linear-gradient(135deg, #182a49, #17213b);
+    border: 1px solid #344967;
+    border-radius: 20px;
+    padding: 30px;
+    min-width: 0;
+    transition: 0.3s;
+}
+
+.world-card:hover {
+    transform: translateY(-5px);
+    border-color: #00e5ff;
+}
+
+.world-card h3 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.world-time {
+    color: #00e5ff;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.world-date {
+    color: #aabbd5;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+@media(max-width: 768px) {
+    .world-clock-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* PREMIUM COUNTDOWN TIMER */
+
+.countdown-container {
+    max-width: 850px;
+    min-height: 420px;
+    margin: 45px auto;
+    padding: 55px 35px;
+
+    background: linear-gradient(
+        135deg,
+        #182a49,
+        #17213b,
+        #20294a
+    );
+
+    border: 1px solid rgba(0,229,255,0.3);
+    border-radius: 28px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.3),
+        0 0 25px rgba(0,229,255,0.08);
+}
+
+/* INPUT SECTION */
+
+.timer-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 45px;
+}
+
+.timer-inputs div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.timer-inputs input {
+    width: 125px;
+    height: 90px;
+
+    background: #101b32;
+    border: 2px solid #344967;
+    border-radius: 18px;
+
+    color: #00e5ff;
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+.timer-inputs input:focus {
+    border-color: #00e5ff;
+    box-shadow: 0 0 20px rgba(0,229,255,0.25);
+}
+
+.timer-inputs label {
+    color: #c6d1e4;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+/* TIMER DISPLAY */
+
+#countdownDisplay {
+    font-size: 85px;
+    font-weight: bold;
+    letter-spacing: 5px;
+
+    color: #00e5ff;
+
+    text-shadow:
+        0 0 10px #00e5ff,
+        0 0 25px rgba(0,229,255,0.5);
+
+    margin: 35px 0 45px;
+}
+
+/* BUTTONS */
+
+.countdown-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.countdown-buttons button {
+    min-width: 130px;
+    padding: 15px 22px;
+
+    background: linear-gradient(135deg, #087f9b, #00a9c9);
+
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 12px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.countdown-buttons button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,229,255,0.25);
+}
+
+/* MESSAGE */
+
+#timerMessage {
+    margin-top: 35px;
+    font-size: 19px;
+    color: #ff80ab;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 600px) {
+
+    .countdown-container {
+        padding: 35px 15px;
+        margin: 25px auto;
+    }
+
+    .timer-inputs {
+        gap: 12px;
+    }
+
+    .timer-inputs input {
+        width: 85px;
+        height: 70px;
+        font-size: 28px;
+    }
+
+    #countdownDisplay {
+        font-size: 42px;
+        letter-spacing: 2px;
+    }
+
+    .countdown-buttons {
+        gap: 10px;
+    }
+
+    .countdown-buttons button {
+        min-width: 100px;
+        padding: 12px;
+    }
+}
